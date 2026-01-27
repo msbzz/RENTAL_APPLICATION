@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:rental_application/core/router/route.dart';
+import 'package:rental_application/core/theme/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,56 +24,13 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
 
       builder: (context, child) {
-        return MaterialApp(
+        return MaterialApp.router(
           debugShowCheckedModeBanner: false,
           title: 'Home Rental Mobile App',
-          theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.blue),
-
-          // ✅ ESSA LINHA é a que faltava no seu código
-          home: const HomePage(),
+          theme: AppTheme.lightTheme(context),
+          routerConfig: router,
         );
       },
-    );
-  }
-}
-
-/// Tela inicial (o "primeiro conteúdo" do app)
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Home',
-          // Exemplo usando ScreenUtil no tamanho da fonte
-          style: TextStyle(fontSize: 18.sp),
-        ),
-      ),
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.all(16.w), // padding responsivo
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(Icons.home, size: 48.r),
-              SizedBox(height: 12.h),
-              Text(
-                'App iniciado com sucesso!',
-                style: TextStyle(fontSize: 16.sp),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(height: 8.h),
-              Text(
-                'Agora você já tem uma tela inicial definida no MaterialApp.',
-                style: TextStyle(fontSize: 12.sp),
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
-        ),
-      ),
     );
   }
 }

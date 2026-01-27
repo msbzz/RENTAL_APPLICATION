@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:rental_application/views/auth/login_screen.dart';
 import 'package:rental_application/views/onboarding/onboarding_screen.dart';
-import 'package:rental_application/views/splash/splach_screen.dart';
+import 'package:rental_application/views/splash/splash_screen.dart';
 
 final router = GoRouter(
   initialLocation: '/',
@@ -9,16 +9,16 @@ final router = GoRouter(
     GoRoute(
       path: '/',
       name: 'splash',
-      builder: (context, state) => SplachScreen(),
+      builder: (context, state) => SplashScreen(),
     ),
     GoRoute(
       path: '/onboarding',
-      name: 'splasch',
+      name: 'onboarding',
       builder: (context, state) => OnboardingScreen(),
     ),
     GoRoute(
       path: '/auth',
-      name: 'splasch',
+      name: 'auth',
       builder: (context, state) => LoginScreen(),
     ),
   ],
