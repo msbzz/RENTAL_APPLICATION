@@ -17,6 +17,29 @@ class OnboardingPage extends StatelessWidget {
           children: [
             SizedBox(height: 60.h),
             Image.asset(content.image, height: 300.h, fit: BoxFit.cover),
+            SizedBox(height: 60.h),
+            Text(
+              content.title,
+              style: TextStyle(
+                color: AppColors.surface,
+                fontSize: 28.sp,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 0.5,
+              ),
+            ),
+            SizedBox(height: 16.h),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 40.w),
+              child: Text(
+                content.description,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: AppColors.surface.withValues(alpha: 0.8),
+                  fontSize: 16.sp,
+                  height: 1.5,
+                ),
+              ),
+            ),
           ],
         ),
       ),
