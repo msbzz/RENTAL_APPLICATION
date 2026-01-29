@@ -105,6 +105,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         child: Text(
           label,
+          textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 14.sp,
             fontWeight: FontWeight.w500,
