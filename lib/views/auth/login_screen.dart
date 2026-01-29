@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rental_application/controllers/auth_controller.dart';
+import 'package:rental_application/core/common/widgets/custom_textfield.dart';
 import 'package:rental_application/core/constants/color_constants.dart';
 import 'package:rental_application/core/constants/text_constants.dart';
 import 'package:rental_application/models/user_model.dart';
@@ -84,6 +85,18 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ],
                   ),
+                ),
+                SizedBox(height: 24.h),
+                CustomTextField(
+                  label: 'Email',
+                  prefixIcon: Icons.email_outlined,
+                  keyboardType: TextInputType.emailAddress,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your email';
+                    }
+                    return null;
+                  },
                 ),
               ],
             ),
