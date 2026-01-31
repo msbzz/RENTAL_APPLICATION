@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:rental_application/controllers/auth_controller.dart';
 import 'package:rental_application/core/constants/color_constants.dart';
+import 'package:rental_application/core/constants/text_constants.dart';
 import 'package:rental_application/models/user_model.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -53,7 +54,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                     iconSize: 36.sp,
                   ),
-                  SizedBox(),
+                  SizedBox(height: 20.h),
+                  Text(
+                    AppTexts.createAccount,
+                    style: TextStyle(
+                      fontSize: 32.sp,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.textPrimary,
+                      letterSpacing: -0.5,
+                    ),
+                  ),
                 ],
               ),
             ),
