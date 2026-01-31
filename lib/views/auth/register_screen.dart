@@ -14,18 +14,18 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
+  final _authController = AuthController();
+  final _formKey = GlobalKey<FormState>();
+  bool _obscurePassword = false;
+  bool _obscureConfirmePassword = false;
+  bool _isLoading = false;
+  UserRole _selectedRole = UserRole.tenant;
+
   @override
   Widget build(BuildContext context) {
-    final _emailController = TextEditingController();
-    final _passwordController = TextEditingController();
-    final _confirmPasswordController = TextEditingController();
-    final _authController = AuthController();
-    final _formKey = GlobalKey<FormState>();
-    bool _obscurePassword = false;
-    bool _obscureConfirmePassword = false;
-    bool _isLoading = false;
-    UserRole _selectedRole = UserRole.tenant;
-
     return Scaffold(
       backgroundColor: AppColors.background,
       body: SafeArea(
@@ -64,9 +64,58 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       letterSpacing: -0.5,
                     ),
                   ),
+                  SizedBox(height: 8.h),
+                  Text(
+                    'Fill in your details to get started',
+                    style: TextStyle(
+                      fontSize: 16.sp,
+                      color: AppColors.textSecondary,
+                      letterSpacing: 0.2,
+                    ),
+                  ),
+                  SizedBox(height: 32.h),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: AppColors.surface,
+                      borderRadius: BorderRadius.circular(12.r),
+                    ),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: _buildRoleTab(UserRole.tenant, 'Tenant'),
+                        ),
+                        Expanded(
+                          child: _buildRoleTab(UserRole.landlord, 'Landlord'),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildRoleTab(UserRole role, String label) {
+    final isSelected = _selectedRole == role;
+    return GestureDetector(
+      onTap: () => setState(() => _selectedRole = role),
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 12.h),
+        decoration: BoxDecoration(
+          color: isSelected ? AppColors.primary : Colors.transparent,
+          borderRadius: BorderRadius.circular(12.r),
+        ),
+        child: Text(
+          label,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w500,
+            color: isSelected ? Colors.white : AppColors.textSecondary,
           ),
         ),
       ),
