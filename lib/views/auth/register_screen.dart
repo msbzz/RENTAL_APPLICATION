@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:rental_application/controllers/auth_controller.dart';
+import 'package:rental_application/core/common/widgets/custom_textfield.dart';
 import 'package:rental_application/core/constants/color_constants.dart';
 import 'package:rental_application/core/constants/text_constants.dart';
 import 'package:rental_application/models/user_model.dart';
@@ -17,6 +18,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
+  final _fullNameController = TextEditingController();
   final _authController = AuthController();
   final _formKey = GlobalKey<FormState>();
   bool _obscurePassword = false;
@@ -89,6 +91,19 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                       ],
                     ),
+                  ),
+                  SizedBox(height: 16.h),
+                  CustomTextField(
+                    controller: _fullNameController,
+                    label: 'Full Name',
+                    prefixIcon: Icons.person_outline,
+                  ),
+                  SizedBox(height: 16.h),
+                  CustomTextField(
+                    controller: _emailController,
+                    label: 'Email',
+                    prefixIcon: Icons.email_outlined,
+                    keyboardType: TextInputType.emailAddress,
                   ),
                 ],
               ),
