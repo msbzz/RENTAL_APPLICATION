@@ -153,7 +153,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     height: 56.h,
                     child: CustomButton(
                       text: 'Create Account',
-                      onPressed: () => _handleRegister,
+                      onPressed: _handleRegister,
                       isLoading: _isLoading,
                     ),
                   ),
