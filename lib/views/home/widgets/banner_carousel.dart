@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:rental_application/core/constants/color_constants.dart';
 import 'package:rental_application/models/banner_add.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -65,9 +66,22 @@ class _BannerCarouselState extends State<BannerCarousel> {
           ),
         ),
         SizedBox(height: 12.h),
-        Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-
-        ],),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: BannerAdd.dummyBanners.asMap().entries.map((entry) {
+            return Container(
+              width: _currentIndex == entry.key ? 24.w : 8.w,
+              height: 8.h,
+              margin: EdgeInsets.symmetric(horizontal: 2.w),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(4.r),
+                color: _currentIndex == entry.key
+                    ? AppColors.primary
+                    : AppColors.primary.withValues(alpha: 0.2),
+              ),
+            );
+          }).toList(),
+        ),
       ],
     );
   }
