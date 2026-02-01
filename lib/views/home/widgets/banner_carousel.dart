@@ -54,7 +54,7 @@ class _BannerCarouselState extends State<BannerCarousel> {
             viewportFraction: 0.9,
             autoPlay: true,
             autoPlayInterval: const Duration(seconds: 3),
-            autoPlayAnimationDuration: Duration(seconds: 300),
+            autoPlayAnimationDuration: Duration(milliseconds: 300),
             autoPlayCurve: Curves.fastOutSlowIn,
             enlargeCenterPage: true,
             onPageChanged: (index, reason) {
@@ -64,6 +64,10 @@ class _BannerCarouselState extends State<BannerCarousel> {
             },
           ),
         ),
+        SizedBox(height: 12.h),
+        Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+
+        ],),
       ],
     );
   }
