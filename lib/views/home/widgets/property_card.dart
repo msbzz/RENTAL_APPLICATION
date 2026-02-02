@@ -84,6 +84,18 @@ class PropertyCard extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 8.h),
+                  Row(
+                    children: [
+                      Text(
+                        '\$${property.price}/m0',
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.primary,
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
