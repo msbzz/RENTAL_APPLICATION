@@ -60,9 +60,30 @@ class PropertyCard extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w600,
-                      color: AppColors.primary,
+                      color: AppColors.textPrimary,
                     ),
                   ),
+                  SizedBox(height: 4.h),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.location_on,
+                        size: 14.sp,
+                        color: AppColors.textSecondary,
+                      ),
+                      SizedBox(height: 4.w),
+                      Expanded(
+                        child: Text(
+                          property.location,
+                          style: TextStyle(
+                            fontSize: 12.sp,
+                            color: AppColors.textSecondary,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 8.h),
                 ],
               ),
             ),
