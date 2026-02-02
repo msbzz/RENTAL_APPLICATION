@@ -87,12 +87,25 @@ class PropertyCard extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        '\$${property.price}/m0',
+                        '\$${property.price}/mo',
                         style: TextStyle(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.bold,
                           color: AppColors.primary,
                         ),
+                      ),
+                      Row(
+                        children: [
+                          Icon(Icons.star, size: 16.sp, color: Colors.amber),
+                          SizedBox(width: 4.w),
+                          Text(
+                            property.avaregeRating.toString(),
+                            style: TextStyle(
+                              fontSize: 12.sp,
+                              color: AppColors.textSecondary,
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
