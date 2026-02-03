@@ -43,6 +43,7 @@ class FavoritesScreen extends StatelessWidget {
               ),
             )
           : GridView.builder(
+              padding: EdgeInsets.all(16.w),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 mainAxisExtent: 260.h,
