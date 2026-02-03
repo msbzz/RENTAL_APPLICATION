@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rental_application/core/constants/color_constants.dart';
 import 'package:rental_application/models/booking_model.dart';
+import 'package:rental_application/views/booking/bookings_list/widgets/booking_card.dart';
 
 class BookingsList extends StatelessWidget {
   final BookingStatus status;
@@ -38,6 +39,12 @@ class BookingsList extends StatelessWidget {
         ),
       );
     }
-    return Container();
+    return ListView.builder(
+      padding: EdgeInsets.all(16.w),
+      itemBuilder: (context, index) {
+        final booking = bookings[index];
+        return BookingCard(booking: booking);
+      },
+    );
   }
 }

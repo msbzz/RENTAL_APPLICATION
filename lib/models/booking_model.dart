@@ -22,7 +22,6 @@ class Booking {
   }) : this.bookingData = bookingDate ?? DateTime.now();
 
   static List<Booking> dummyBookings = [
-    /**
     Booking(
       id: '1',
       property: Property.dummyProperties[0],
@@ -58,6 +57,6 @@ class Booking {
       totalPrice: 430 * 5,
       status: BookingStatus.upcoming,
       bookingDate: DateTime.now().subtract(const Duration(days: 5)),
-    ), */
+    ),
   ];
 }
