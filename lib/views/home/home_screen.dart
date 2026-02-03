@@ -98,6 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
+            SliverPadding(padding: EdgeInsets.only(bottom: 16.h)),
           ],
         ),
       ),
