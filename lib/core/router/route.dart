@@ -3,7 +3,7 @@ import 'package:rental_application/main_layout.dart';
 import 'package:rental_application/views/auth/forgot_password_screen.dart';
 import 'package:rental_application/views/auth/login_screen.dart';
 import 'package:rental_application/views/auth/register_screen.dart';
-import 'package:rental_application/views/booking/bookings_list/booking_list_screen.dart';
+import 'package:rental_application/views/booking/bookings_list/bookings_list_screen.dart';
 import 'package:rental_application/views/chat/messages_screen.dart';
 import 'package:rental_application/views/favorites/favorites_screen.dart';
 import 'package:rental_application/views/home/home_screen.dart';
@@ -61,7 +61,7 @@ final router = GoRouter(
         ),
         GoRoute(
           path: '/bookings',
-          builder: (context, state) => const BookingListScreen(),
+          builder: (context, state) => const BookingsListScreen(),
         ),
         GoRoute(
           path: '/messages',

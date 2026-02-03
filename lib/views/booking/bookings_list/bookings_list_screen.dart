@@ -1,0 +1,70 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:rental_application/core/common/widgets/page_layout.dart';
+import 'package:rental_application/core/constants/color_constants.dart';
+import 'package:rental_application/models/booking_model.dart';
+
+class BookingsListScreen extends StatefulWidget {
+  const BookingsListScreen({super.key});
+
+  @override
+  State<BookingsListScreen> createState() => _BookingsListScreenState();
+}
+
+class _BookingsListScreenState extends State<BookingsListScreen>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+  final List<BookingStatus> _tabs = [
+    BookingStatus.upcoming,
+    BookingStatus.ongoing,
+    BookingStatus.cancelled,
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: _tabs.length, vsync: this);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return PageLayout(
+      title: 'My Bookings',
+      body: Column(
+        children: [
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+            decoration: BoxDecoration(
+              color: Colors.grey.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(30.r),
+            ),
+            child: TabBar(
+              controller: _tabController,
+              tabs: _tabs
+                  .map(
+                    (status) => Tab(
+                      text:
+                          status.name[0].toUpperCase() +
+                          status.name.substring(1),
+                    ),
+                  )
+                  .toList(),
+              labelColor: Colors.white,
+              unselectedLabelColor: AppColors.textSecondary,
+              indicator: BoxDecoration(
+                color: AppColors.primary,
+                borderRadius: BorderRadius.circular(30.r),
+              ),
+              dividerColor: Colors.transparent,
+              indicatorSize: TabBarIndicatorSize.tab,
+              labelStyle: TextStyle(
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
