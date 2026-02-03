@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rental_application/core/common/widgets/page_layout.dart';
 import 'package:rental_application/core/constants/color_constants.dart';
 import 'package:rental_application/models/booking_model.dart';
+import 'package:rental_application/views/booking/bookings_list/widgets/bookings_list.dart';
 
 class BookingsListScreen extends StatefulWidget {
   const BookingsListScreen({super.key});
@@ -61,10 +62,30 @@ class _BookingsListScreenState extends State<BookingsListScreen>
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w600,
               ),
+              unselectedLabelStyle: TextStyle(
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w500,
+              ),
+              padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 4.w),
+              splashBorderRadius: BorderRadius.circular(30.h),
+            ),
+          ),
+          Expanded(
+            child: TabBarView(
+              controller: _tabController,
+              children: _tabs
+                  .map((status) => BookingsList(status: status))
+                  .toList(),
             ),
           ),
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
   }
 }
