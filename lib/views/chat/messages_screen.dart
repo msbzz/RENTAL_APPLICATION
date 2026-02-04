@@ -58,7 +58,11 @@ class MessagesScreen extends StatelessWidget {
                 color: AppColors.primary.withValues(alpha: 0.08),
                 shape: BoxShape.circle,
               ),
-              child: Icon(Icons.chat_bubble_outline_outlined, size: 48.sp),
+              child: Icon(
+                Icons.chat_bubble_outline_outlined,
+                size: 48.sp,
+                color: AppColors.primary,
+              ),
             ),
             SizedBox(height: 24.h),
             Text(
@@ -69,6 +73,17 @@ class MessagesScreen extends StatelessWidget {
                 color: AppColors.textPrimary,
               ),
             ),
+            if (!isLandLord) ...[
+              SizedBox(height: 12.h),
+              Text(
+                'Start Chating with property owners',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 14.sp,
+                  color: AppColors.textSecondary,
+                ),
+              ),
+            ],
           ],
         ),
       ),
