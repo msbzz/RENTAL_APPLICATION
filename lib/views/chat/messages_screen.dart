@@ -83,6 +83,20 @@ class MessagesScreen extends StatelessWidget {
                   color: AppColors.textSecondary,
                 ),
               ),
+              SizedBox(height: 24.h),
+              TextButton.icon(
+                onPressed: () {},
+                style: TextButton.styleFrom(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 8.h,
+                  ),
+                ),
+                label: Text(
+                  'Browse Properties',
+                  style: TextStyle(fontSize: 14.sp),
+                ),
+              ),
             ],
           ],
         ),
