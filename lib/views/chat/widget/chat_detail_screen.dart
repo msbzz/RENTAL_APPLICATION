@@ -62,6 +62,25 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
               },
             ),
           ),
+          _buildMessageInput(),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildMessageInput() {
+    return Container(
+      padding: EdgeInsets.all(
+        16.w,
+      ).copyWith(bottom: 16.h + MediaQuery.of(context).viewInsets.bottom),
+      decoration: BoxDecoration(
+        color: AppColors.surface,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 10,
+            offset: const Offset(0, -5),
+          ),
         ],
       ),
     );
