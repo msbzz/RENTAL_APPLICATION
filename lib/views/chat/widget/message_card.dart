@@ -115,6 +115,10 @@ class MessageCard extends StatelessWidget {
                           margin: EdgeInsets.only(left: 8.w),
                           width: 10.w,
                           height: 10.w,
+                          decoration: BoxDecoration(
+                            color: AppColors.primary,
+                            shape: BoxShape.circle,
+                          ),
                         ),
                       ],
                     ),
