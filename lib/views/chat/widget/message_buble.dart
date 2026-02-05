@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 import 'package:rental_application/core/constants/color_constants.dart';
 
 class MessageBubble extends StatelessWidget {
@@ -41,6 +42,8 @@ class MessageBubble extends StatelessWidget {
                 fontSize: 14.sp,
               ),
             ),
+            SizedBox(height: 4.h),
+            Text(DateFormat('hh:mm a').format(timestamp)),
           ],
         ),
       ),
