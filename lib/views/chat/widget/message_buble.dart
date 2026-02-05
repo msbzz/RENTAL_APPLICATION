@@ -43,7 +43,15 @@ class MessageBubble extends StatelessWidget {
               ),
             ),
             SizedBox(height: 4.h),
-            Text(DateFormat('hh:mm a').format(timestamp)),
+            Text(
+              DateFormat('hh:mm a').format(timestamp),
+              style: TextStyle(
+                color: isMe
+                    ? AppColors.surface.withValues(alpha: 0.8)
+                    : AppColors.textSecondary,
+                fontSize: 10.sp,
+              ),
+            ),
           ],
         ),
       ),
