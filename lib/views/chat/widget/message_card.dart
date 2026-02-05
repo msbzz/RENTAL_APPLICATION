@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:rental_application/core/constants/color_constants.dart';
 import 'package:rental_application/models/message.dart';
 
@@ -45,7 +46,10 @@ class MessageCard extends StatelessWidget {
         ),
       ),
       child: InkWell(
-        onTap: () {},
+        onTap: () => context.push(
+          isLandLord ? '/landlord/messages/chat' : '/messages/chat',
+          extra: message,
+        ),
         borderRadius: BorderRadius.circular(16.r),
         child: Padding(
           padding: EdgeInsetsGeometry.all(16.w),

@@ -1,10 +1,12 @@
 import 'package:go_router/go_router.dart';
 import 'package:rental_application/main_layout.dart';
+import 'package:rental_application/models/message.dart';
 import 'package:rental_application/views/auth/forgot_password_screen.dart';
 import 'package:rental_application/views/auth/login_screen.dart';
 import 'package:rental_application/views/auth/register_screen.dart';
 import 'package:rental_application/views/booking/bookings_list/bookings_list_screen.dart';
 import 'package:rental_application/views/chat/messages_screen.dart';
+import 'package:rental_application/views/chat/widget/chat_detail_screen.dart';
 import 'package:rental_application/views/favorites/favorites_screen.dart';
 import 'package:rental_application/views/home/home_screen.dart';
 import 'package:rental_application/views/landlord/landlord_bookings/landlord_bookings_screen.dart';
@@ -67,6 +69,15 @@ final router = GoRouter(
           path: '/messages',
           builder: (context, state) =>
               const MessagesScreen(isLandLord: false, userId: '1'),
+          routes: [
+            GoRoute(
+              path: 'chat',
+              builder: (context, state) {
+                final message = state.extra as Message;
+                return ChatDetailScreen(message: message);
+              },
+            ),
+          ],
         ),
         GoRoute(
           path: '/profile',
@@ -92,6 +103,15 @@ final router = GoRouter(
           path: '/landlord/messages',
           builder: (context, state) =>
               const MessagesScreen(isLandLord: true, userId: '2'),
+          routes: [
+            GoRoute(
+              path: 'chat',
+              builder: (context, state) {
+                final message = state.extra as Message;
+                return ChatDetailScreen(message: message);
+              },
+            ),
+          ],
         ),
         GoRoute(
           path: '/landlord/bookings',

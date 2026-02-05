@@ -21,7 +21,6 @@ class MessagesScreen extends StatelessWidget {
         .where((m) => m.senderId == userId || m.recieverId == userId)
         .toList();
 
-    //debugPrint('Array messages ==>>>> ${userMessages.length.toString()}');
     return PageLayout(
       title: 'Messages',
       body: Container(
