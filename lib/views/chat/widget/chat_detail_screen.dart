@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rental_application/core/constants/color_constants.dart';
 import 'package:rental_application/models/message.dart';
 import 'package:rental_application/views/chat/widget/message_buble.dart';
-import 'package:rental_application/views/home/widgets/home_app_bar.dart';
 
 class ChatDetailScreen extends StatefulWidget {
   final Message message;
@@ -80,6 +79,39 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
             color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, -5),
+          ),
+        ],
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: TextField(
+              controller: _messageController,
+              decoration: InputDecoration(
+                hintText: 'Type a message',
+                filled: true,
+                fillColor: AppColors.background,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(24.r),
+                  borderSide: BorderSide.none,
+                ),
+                contentPadding: EdgeInsets.symmetric(
+                  horizontal: 16.w,
+                  vertical: 8.h,
+                ),
+              ),
+            ),
+          ),
+          SizedBox(width: 12.w),
+          Container(
+            decoration: BoxDecoration(
+              color: AppColors.primary,
+              shape: BoxShape.circle,
+            ),
+            child: IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.send, color: AppColors.surface, size: 20.sp),
+            ),
           ),
         ],
       ),
