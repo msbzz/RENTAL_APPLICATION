@@ -30,6 +30,18 @@ class ProfileAppBar extends StatelessWidget {
               ],
             ),
           ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircleAvatar(
+                radius: 50,
+                backgroundColor: AppColors.surface,
+                backgroundImage: avatarUrl != null
+                    ? NetworkImage(avatarUrl!) as ImageProvider
+                    : AssetImage('assets/images/user_avatar.jpg'),
+              ),
+            ],
+          ),
         ),
       ),
     );
