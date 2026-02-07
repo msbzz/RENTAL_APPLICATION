@@ -46,9 +46,22 @@ class ProfileMenuItem extends StatelessWidget {
                       color: AppColors.textPrimary,
                     ),
                   ),
+
+                  if (subtitle != null) ...[
+                    SizedBox(height: 4.h),
+                    Text(
+                      subtitle!,
+                      style: TextStyle(
+                        fontSize: 14.sp,
+                        color: AppColors.textSecondary,
+                      ),
+                    ),
+                  ],
                 ],
               ),
             ),
+            trailing ??
+                const Icon(Icons.chevron_right, color: AppColors.textSecondary),
           ],
         ),
       ),

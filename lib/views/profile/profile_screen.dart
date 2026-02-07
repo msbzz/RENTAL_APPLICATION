@@ -18,23 +18,43 @@ class ProfileScreen extends StatelessWidget {
           SliverToBoxAdapter(
             child: Padding(
               padding: EdgeInsets.all(16.w),
-              child: ProfileCard(
-                title: 'Account',
-                items: [
-                  ProfileMenuItem(
-                    icon: Icons.person_outline,
-                    title: 'Person Information',
-                    onTap: () {},
+              child: Column(
+                children: [
+                  ProfileCard(
+                    title: 'Account',
+                    items: [
+                      ProfileMenuItem(
+                        icon: Icons.person_outline,
+                        title: 'Person Information',
+                        onTap: () {},
+                      ),
+                      ProfileMenuItem(
+                        icon: Icons.payment_outlined,
+                        title: 'Payment Methods',
+                        onTap: () {},
+                      ),
+                      ProfileMenuItem(
+                        icon: Icons.notifications_outlined,
+                        title: 'Notifications',
+                        onTap: () {},
+                      ),
+                    ],
                   ),
-                  ProfileMenuItem(
-                    icon: Icons.payment_outlined,
-                    title: 'Payment Methods',
-                    onTap: () {},
-                  ),
-                  ProfileMenuItem(
-                    icon: Icons.notifications_outlined,
-                    title: 'Notifications',
-                    onTap: () {},
+                  SizedBox(height: 16.h),
+                  ProfileCard(
+                    title: 'Support',
+                    items: [
+                      ProfileMenuItem(
+                        icon: Icons.help_outline,
+                        title: 'Help Center',
+                        onTap: () {},
+                      ),
+                      ProfileMenuItem(
+                        icon: Icons.policy_outlined,
+                        title: 'Privacy Policy',
+                        onTap: () {},
+                      ),
+                    ],
                   ),
                 ],
               ),
