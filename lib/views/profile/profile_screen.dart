@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:rental_application/core/common/widgets/custom_button.dart';
 import 'package:rental_application/core/constants/color_constants.dart';
 import 'package:rental_application/views/profile/widget/profile_app_bar.dart';
 import 'package:rental_application/views/profile/widget/profile_card.dart';
@@ -56,6 +57,8 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ],
                   ),
+                  SizedBox(height: 24.h),
+                  CustomButton(text: 'Log Out', onPressed: () {}),
                 ],
               ),
             ),
