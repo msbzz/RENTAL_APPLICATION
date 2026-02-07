@@ -44,6 +44,18 @@ class LogoutDialog extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 8.h),
+            TextButton(
+              onPressed: () => context.pop(),
+              child: Text(
+                'logout',
+                style: TextStyle(
+                  color: AppColors.error,
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
           ],
         ),
       ],
