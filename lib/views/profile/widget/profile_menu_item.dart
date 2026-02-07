@@ -35,6 +35,20 @@ class ProfileMenuItem extends StatelessWidget {
               child: Icon(icon, color: AppColors.primary),
             ),
             SizedBox(width: 16.w),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontSize: 16.sp,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
