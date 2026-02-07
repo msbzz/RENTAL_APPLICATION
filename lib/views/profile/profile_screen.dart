@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rental_application/core/constants/color_constants.dart';
 import 'package:rental_application/views/profile/widget/profile_app_bar.dart';
 import 'package:rental_application/views/profile/widget/profile_card.dart';
+import 'package:rental_application/views/profile/widget/profile_menu_item.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -17,7 +18,26 @@ class ProfileScreen extends StatelessWidget {
           SliverToBoxAdapter(
             child: Padding(
               padding: EdgeInsets.all(16.w),
-              child: ProfileCard(title: 'Account', items: []),
+              child: ProfileCard(
+                title: 'Account',
+                items: [
+                  ProfileMenuItem(
+                    icon: Icons.person_outline,
+                    title: 'Person Information',
+                    onTap: () {},
+                  ),
+                  ProfileMenuItem(
+                    icon: Icons.payment_outlined,
+                    title: 'Payment Methods',
+                    onTap: () {},
+                  ),
+                  ProfileMenuItem(
+                    icon: Icons.notifications_outlined,
+                    title: 'Notifications',
+                    onTap: () {},
+                  ),
+                ],
+              ),
             ),
           ),
         ],
