@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rental_application/core/constants/color_constants.dart';
 
 class ProfileAppBar extends StatelessWidget {
@@ -39,6 +40,22 @@ class ProfileAppBar extends StatelessWidget {
                 backgroundImage: avatarUrl != null
                     ? NetworkImage(avatarUrl!) as ImageProvider
                     : AssetImage('assets/images/user_avatar.jpg'),
+              ),
+              SizedBox(height: 12.h),
+              Text(
+                name,
+                style: TextStyle(
+                  fontSize: 24.sp,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.surface,
+                ),
+              ),
+              Text(
+                email,
+                style: TextStyle(
+                  fontSize: 14.sp,
+                  color: AppColors.surface.withValues(alpha: 0.8),
+                ),
               ),
             ],
           ),
